@@ -1,0 +1,15 @@
+{
+  "name": "forms",
+  "version": "0.0.1",
+  "description": "Web Forms man ",
+  "main": "index.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "author": "am",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "express": "^4.16.3"
+  }
+}
