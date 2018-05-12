@@ -37,3 +37,22 @@ body {
   padding-top: 20px;
   margin: 20px 0;
 }
+
+.contact{
+  width: 100%; 
+  margin: 0 auto;
+  padding-bottom: 100px;
+}
+
+.contact p{
+  text-align: center;
+  font-size: 2em;
+  margin: 20px;
+}
+
+.contact form{
+  width: 40%;
+  margin: 0 auto;
+}
+
+.contact
