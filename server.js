@@ -1,6 +1,7 @@
 const express = require('express');
 const app = express();
 const bodyParser = require('body-parser');
+const axios = require('axios');
 
 const PORT = 3030; 
 
@@ -14,7 +15,14 @@ app.get('/', (req, res) => {
 });
 
 app.post('/', (req, res) => {
-  console.log(req.body);
+  const name = req.body.name; 
+  const email = req.body.email;
+  const data = {
+    name: name, 
+    email: email
+  }
+  axios.post('https://forms-487c6.firebaseio.com/users.json', data)
+    .then((response) => console.log("user sent"));
   res.redirect('/');
 });
 
