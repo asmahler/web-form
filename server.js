@@ -1,7 +1,10 @@
 const express = require('express');
 const app = express();
 const bodyParser = require('body-parser');
+const axios = require('axios');
+
 const PORT = 3030; 
+
 
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static('public'));
@@ -11,9 +14,16 @@ app.get('/', (req, res) => {
 
 });
 
-app.post('/contact', (req, res) => {
-  console.log(req.body);
-  res.send(`Submission Recieved, Thank you ${req.body.name}`);
+app.post('/', (req, res) => {
+  const name = req.body.name; 
+  const email = req.body.email;
+  const data = {
+    name: name, 
+    email: email
+  }
+  axios.post('https://forms-487c6.firebaseio.com/users.json', data)
+    .then((response) => console.log("user sent"));
+  res.redirect('/');
 });
 
 app.listen( PORT, () => {
