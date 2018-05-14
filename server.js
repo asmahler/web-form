@@ -22,7 +22,7 @@ app.post('/', (req, res) => {
     email: email
   }
   axios.post('https://forms-487c6.firebaseio.com/users.json', data)
-    .then((response) => console.log("user sent"));
+    .then((response) => console.log(`User Sent: Name is ${data.name} and email is ${data.email}`));
   res.redirect('/');
 });
 
